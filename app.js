@@ -31,7 +31,10 @@ app.post("/upload", function (req, res) {
 });
 
 app.get("/download", function (req, res) {
-    res.render("download_page");
+    URL.find({}, function (err, books) {
+        if (err) console.log(err);
+        res.render("download_page", { books: books });
+    });
 });
 
 app.listen(8080, function () {

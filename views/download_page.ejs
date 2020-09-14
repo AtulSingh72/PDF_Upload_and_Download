@@ -30,7 +30,15 @@
 
     <body>
         <h1>Download Document Page</h1>
-
+        <ul>
+            <% for (book in books) { %>
+            <li>
+                <a href="<%= books[book].url %>" target="_blank"
+                    ><%= books[book].name %></a
+                >
+            </li>
+            <% } %>
+        </ul>
         <!-- Script CDN Bootstrap -->
         <script
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
